@@ -1,0 +1,3 @@
+node-parlez
+
+a unofficial api for Google's Translate/Text-To-Speech service(translate.google.com) written using node.js. It operates as an intermediary server between their system and your web app, providing the produced translations in MP3 format.
