@@ -8,7 +8,6 @@ var http = require('http'),
     fs = require("fs"),
     events = require("events"),
 	paperboy = require('paperboy');
-	r = require('mersenne');
 	
 
 WEBROOT = path.join(path.dirname(__filename), 'webroot');
@@ -51,7 +50,7 @@ else {
 	var host = url.parse(downloadfile).hostname;
 	var filename = url.parse(downloadfile).pathname.split("/").pop();
 	var currentTime = new Date();
-	var realname =  r.rand(N).toString() + '_' + currentTime.getHours() + '_' + currentTime.getMinutes() + '_' + currentTime.getSeconds() + ".mp3";
+	var realname = currentTime.getTime() + ".mp3";
 	var theurl = http.createClient(80, host);
 	var requestUrl = downloadfile;
 	sys.puts("Downloading file: " + filename);
