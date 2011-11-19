@@ -41,8 +41,8 @@ if (req.url[1]=='f') {
 }
 
 else {
-	parameters = url.parse(req.url,true);
-	console.log(parameters.query)
+	var parameters = url.parse(req.url,true);
+	//console.log(parameters.query)
 
 	var downloadfile = "http://translate.google.com/translate_tts?q="+parameters.query['q']+"&tl="+parameters.query['tl'];
 
@@ -52,7 +52,7 @@ else {
 	request(downloadfile, function(error, response, buffer) {
 		//console.log(error)
 		//console.log(response)
-	}).pipe(fs.createWriteStream("webroot/files/"+realname))
+	}).pipe(fs.createWriteStream("webroot/files/"+realname));
 
 
 	res.setHeader("Content-Type", "text/html");
