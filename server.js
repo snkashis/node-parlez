@@ -1,11 +1,11 @@
 var http = require('http'),
-	sys = require("sys"),
+    sys = require("sys"),
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
     events = require("events"),
     paperboy = require('paperboy'),
-	request = require('request')
+    request = require('request')
 	
 
 WEBROOT = path.join(path.dirname(__filename), 'webroot');
@@ -56,7 +56,7 @@ else {
 
 
 	res.setHeader("Content-Type", "text/html");
-	res.write('http://govorijo.rtworldly.com/files/'+realname);
+	res.write(realname);
 	res.end();   
 }  				
     
